@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
+  --accent: 161 72% 39%; /* #10b981 */
+}
+
+body {
+  background-color: black;
+  color: white;
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .neon-glow {
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+  }
+  .text-neon {
+    color: #10b981;
+    text-shadow: 0 0 10px rgba(16, 185, 129, 0.8);
+  }
+}
