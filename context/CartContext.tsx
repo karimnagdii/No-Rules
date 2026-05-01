@@ -19,6 +19,25 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
 
+  // Load from localStorage
+  useEffect(() => {
+    const saved = localStorage.getItem('cartItems');
+    if (saved) {
+      try {
+        setItems(JSON.parse(saved));
+      } catch (e) {
+        console.error('Failed to parse cart items', e);
+      }
+    }
+  }, []);
+
+  // Save to localStorage
+  useEffect(() => {
+    if (items.length > 0 || localStorage.getItem('cartItems')) {
+      localStorage.setItem('cartItems', JSON.stringify(items));
+    }
+  }, [items]);
+
   const addToCart = (product: Product) => {
     setItems(prev => {
       const existing = prev.find(i => i.id === product.id);

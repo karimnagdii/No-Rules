@@ -67,7 +67,7 @@ export default function CartPanel() {
                       </div>
                       <div className="flex items-center justify-between">
                         <p className="text-sm font-mono tracking-tighter text-zinc-400">
-                          {item.quantity} X ${item.price}
+                          {item.quantity} X EGP {item.price}
                         </p>
                         <button 
                           onClick={() => removeFromCart(item.id)}
@@ -87,7 +87,7 @@ export default function CartPanel() {
               <div className="p-6 border-t border-neon/20 bg-zinc-900/50">
                 <div className="flex justify-between items-end mb-6">
                   <p className="text-zinc-400 uppercase text-xs tracking-widest">Subtotal</p>
-                  <p className="text-3xl font-black italic tracking-tighter text-neon">${total.toFixed(2)}</p>
+                  <p className="text-3xl font-black italic tracking-tighter text-neon">EGP {total.toFixed(2)}</p>
                 </div>
                 <button className="w-full py-4 bg-neon text-black font-black uppercase tracking-widest hover:bg-white transition-colors relative overflow-hidden group">
                   <span className="relative z-10 italic">Checkout_System</span>
