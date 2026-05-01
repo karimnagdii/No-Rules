@@ -7,18 +7,26 @@ import { Product } from '@/types/product';
 export default function ProductGrid() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     fetch('/api/products')
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) throw new Error();
+        return res.json();
+      })
       .then(data => {
         setProducts(data);
         setLoading(false);
       })
-      .catch(() => setLoading(false));
+      .catch(() => {
+        setError(true);
+        setLoading(false);
+      });
   }, []);
 
   if (loading) return <div className="text-center py-24 text-neon animate-pulse uppercase tracking-widest">Initialising Grid...</div>;
+  if (error) return <div className="text-center py-24 text-red-500 uppercase tracking-widest border border-red-500 m-6">SYSTEM ERROR: UNABLE TO FETCH DATA</div>;
 
   return (
     <section className="px-6 py-24 max-w-7xl mx-auto">

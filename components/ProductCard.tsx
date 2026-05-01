@@ -1,9 +1,11 @@
-// components/ProductCard.tsx
 'use client';
 import { motion } from 'framer-motion';
 import { Product } from '@/types/product';
+import { useCart } from '@/context/CartContext';
 
 export default function ProductCard({ product }: { product: Product }) {
+  const { addToCart } = useCart();
+
   return (
     <motion.div 
       initial={{ opacity: 0, scale: 0.9 }}
@@ -24,7 +26,10 @@ export default function ProductCard({ product }: { product: Product }) {
       <h3 className="text-lg font-bold text-white">{product.name}</h3>
       <p className="text-neon font-mono uppercase text-sm">{product.category}</p>
       <p className="text-white font-bold mt-1">EGP {product.price}</p>
-      <button className="w-full mt-4 py-2 border border-zinc-700 text-white font-bold tracking-widest group-hover:border-neon group-hover:bg-neon group-hover:text-black transition-all uppercase text-sm">
+      <button 
+        onClick={() => addToCart(product)}
+        className="w-full mt-4 py-2 border border-zinc-700 text-white font-bold tracking-widest group-hover:border-neon group-hover:bg-neon group-hover:text-black transition-all uppercase text-sm"
+      >
         ADD TO CART
       </button>
     </motion.div>
