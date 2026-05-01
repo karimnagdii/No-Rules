@@ -15,8 +15,11 @@ export default function CartPanel() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setIsOpen(false)}
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50"
+            onClick={() => {
+              console.log('Overlay clicked');
+              setIsOpen(false);
+            }}
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[110]"
           />
 
           {/* Panel */}
@@ -25,7 +28,7 @@ export default function CartPanel() {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed right-0 top-0 h-full w-full max-w-md bg-zinc-950 border-l border-neon/30 z-50 shadow-[0_0_50px_rgba(0,255,255,0.1)] flex flex-col"
+            className="fixed right-0 top-0 h-full w-full max-w-md bg-zinc-950 border-l border-neon/30 z-[120] shadow-[0_0_50px_rgba(0,255,255,0.1)] flex flex-col"
           >
             {/* Header */}
             <div className="p-6 border-b border-neon/20 flex items-center justify-between">

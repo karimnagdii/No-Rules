@@ -2,9 +2,15 @@
 import { motion } from 'framer-motion';
 import { Product } from '@/types/product';
 import { useCart } from '@/context/CartContext';
+import Image from 'next/image';
 
 export default function ProductCard({ product }: { product: Product }) {
   const { addToCart } = useCart();
+
+  const handleAdd = () => {
+    console.log('Add to cart clicked:', product.name);
+    addToCart(product);
+  };
 
   return (
     <motion.div 
@@ -15,19 +21,18 @@ export default function ProductCard({ product }: { product: Product }) {
       className="group relative bg-zinc-900 border border-zinc-800 p-4 transition-all hover:border-neon hover:neon-glow"
     >
       <div className="aspect-[3/4] bg-black mb-4 overflow-hidden relative">
-        {/* IMAGE GENERATION PROMPT:
-            A high-fashion streetwear shot of a model wearing a {product.name} in an 
-            Egyptian cyberpunk alleyway. Neon green lights reflecting off dark surfaces. 
-            Cinematic lighting, 8k resolution, minimalist but rebellious aesthetic. */}
-        <div className="w-full h-full bg-zinc-800 flex items-center justify-center italic text-zinc-500 text-sm text-center px-4">
-          [Image Placeholder: {product.name}]
-        </div>
+        <Image
+          src={product.image}
+          alt={product.name}
+          fill
+          className="object-cover transition-transform duration-700 group-hover:scale-110"
+        />
       </div>
       <h3 className="text-lg font-bold text-white">{product.name}</h3>
       <p className="text-neon font-mono uppercase text-sm">{product.category}</p>
       <p className="text-white font-bold mt-1">EGP {product.price}</p>
       <button 
-        onClick={() => addToCart(product)}
+        onClick={handleAdd}
         className="w-full mt-4 py-2 border border-zinc-700 text-white font-bold tracking-widest group-hover:border-neon group-hover:bg-neon group-hover:text-black transition-all uppercase text-sm"
       >
         ADD TO CART

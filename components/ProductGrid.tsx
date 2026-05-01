@@ -25,17 +25,22 @@ export default function ProductGrid() {
       });
   }, []);
 
-  if (loading) return <div className="text-center py-24 text-neon animate-pulse uppercase tracking-widest">Initialising Grid...</div>;
-  if (error) return <div className="text-center py-24 text-red-500 uppercase tracking-widest border border-red-500 m-6">SYSTEM ERROR: UNABLE TO FETCH DATA</div>;
-
   return (
-    <section className="px-6 py-24 max-w-7xl mx-auto">
-      <h2 className="text-4xl font-black mb-12 tracking-tighter uppercase italic border-l-4 border-neon pl-4">Latest Drop</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {products.map(product => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
-    </section>
+    <div id="latest-drop">
+      {loading ? (
+        <div className="text-center py-24 text-neon animate-pulse uppercase tracking-widest">Initialising Grid...</div>
+      ) : error ? (
+        <div className="text-center py-24 text-red-500 uppercase tracking-widest border border-red-500 m-6">SYSTEM ERROR: UNABLE TO FETCH DATA</div>
+      ) : (
+        <section className="px-6 py-24 max-w-7xl mx-auto">
+          <h2 className="text-4xl font-black mb-12 tracking-tighter uppercase italic border-l-4 border-neon pl-4">Latest Drop</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {products.map(product => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        </section>
+      )}
+    </div>
   );
 }

@@ -15,6 +15,10 @@ export default function Hero() {
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
+        onClick={() => {
+          console.log('Hero button clicked');
+          document.getElementById('latest-drop')?.scrollIntoView({ behavior: 'smooth' });
+        }}
         className="mt-12 px-8 py-3 border border-neon text-neon font-bold tracking-widest hover:bg-neon hover:text-black transition-all neon-glow uppercase"
       >
         SHOP THE DROP
