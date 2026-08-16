@@ -1,30 +1,30 @@
-pagead2.googlesyndication.com
-googleads.g.doubleclick.net
-googleads4.g.doubleclick.net
-ad.doubleclick.net
-adclick.g.doubleclick.net
-cm.g.doubleclick.net
-stats.g.doubleclick.net
-static.doubleclick.net
-m.doubleclick.net
-mediavisor.doubleclick.net
-pubads.g.doubleclick.net
-securepubads.g.doubleclick.net
-pagead.l.doubleclick.net
-redirector.googlevideo.com
-i.instagram.com
-qevents.quora.com
-ngfts.lge.com
-privacyportal.onetrust.com
-consent.trustarc.com
-sdk.privacy-center.org
-cdn.privacy-mgmt.com
-cmp.inmobi.com
-clientstream.launchdarkly.com
-click.mailchimp.com
-api.onesignal.com
-dai.google.com
-pubads.g.doubleclick.net/gampad/ads
-securepubads.g.doubleclick.net/gampad/ads
-googleads.g.doubleclick.net/pagead/ads
-ssl.p.jwpcdn.com
+0.0.0.0 pagead2.googlesyndication.com
+0.0.0.0 googleads.g.doubleclick.net
+0.0.0.0 googleads4.g.doubleclick.net
+0.0.0.0 ad.doubleclick.net
+0.0.0.0 adclick.g.doubleclick.net
+0.0.0.0 cm.g.doubleclick.net
+0.0.0.0 stats.g.doubleclick.net
+0.0.0.0 static.doubleclick.net
+0.0.0.0 m.doubleclick.net
+0.0.0.0 mediavisor.doubleclick.net
+0.0.0.0 pubads.g.doubleclick.net
+0.0.0.0 securepubads.g.doubleclick.net
+0.0.0.0 pagead.l.doubleclick.net
+0.0.0.0 redirector.googlevideo.com
+0.0.0.0 i.instagram.com
+0.0.0.0 qevents.quora.com
+0.0.0.0 ngfts.lge.com
+0.0.0.0 privacyportal.onetrust.com
+0.0.0.0 consent.trustarc.com
+0.0.0.0 sdk.privacy-center.org
+0.0.0.0 cdn.privacy-mgmt.com
+0.0.0.0 cmp.inmobi.com
+0.0.0.0 clientstream.launchdarkly.com
+0.0.0.0 click.mailchimp.com
+0.0.0.0 api.onesignal.com
+0.0.0.0 dai.google.com
+0.0.0.0 pubads.g.doubleclick.net/gampad/ads
+0.0.0.0 securepubads.g.doubleclick.net/gampad/ads
+0.0.0.0 googleads.g.doubleclick.net/pagead/ads
+0.0.0.0 ssl.p.jwpcdn.com
